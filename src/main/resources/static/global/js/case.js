@@ -16,6 +16,7 @@ function initDecisionTree() {
 function initCaseViz() {
     var placeholderDiv = document.getElementById("caseViz");
     var url = "https://public.tableau.com/views/ODC/decision?:embed=y&:display_count=yes&publish=yes&:toolbar=no&:origin=viz_share_link";
+
     var options = {
         hideTabs: true,
         hideToolbar: true,
