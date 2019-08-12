@@ -11,7 +11,7 @@ function renderPowerChart() {
             type: 'bar'
         },
         title: {
-            text: '戰鬥力大比拼'
+            text: ''
         },
         xAxis: {
             categories: ['']
@@ -19,7 +19,7 @@ function renderPowerChart() {
         yAxis: {
             min: 0,
             title: {
-                text: '被告 V.S 原告'
+                text: null
             }
         },
         legend: {
@@ -34,7 +34,7 @@ function renderPowerChart() {
                         return this.series.name + ": " + Highcharts.numberFormat(this.percentage) + '%';
                     },
                     style: {
-                        fontSize: 20 + 'px'
+                        fontSize: 15 + 'px'
                     }
                 }
             }
@@ -71,7 +71,7 @@ function renderFivePowerChart() {
         },
 
         title: {
-            text: '律師專長五力分析',
+            text: '',
             x: -80
         },
 

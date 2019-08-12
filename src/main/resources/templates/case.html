@@ -5,14 +5,9 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script type="text/javascript" src="http://mbostock.github.com/d3/d3.js?2.9.0"></script>
+    <script src="https://d3js.org/d3.v3.min.js" type="text/javascript"></script>
     <script src="https://public.tableau.com/javascripts/api/tableau-2.min.js"></script>
-
-    <script src="https://code.highcharts.com/highcharts.js"></script>
-    <script src="https://code.highcharts.com/highcharts-more.js"></script>
-    <script src="https://code.highcharts.com/modules/exporting.js"></script>
-    <script src="https://code.highcharts.com/modules/export-data.js"></script>
-    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+    <script th:src="@{/global/js/tree-boxes.js}"></script>
     <script th:src="@{/global/js/case.js}"></script>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
@@ -29,7 +24,7 @@
             </div>
         </div>
         <div class="row">
-            <div id="decisionTree">
+            <div id="tree-container">
             </div>
         </div>
     </div>
