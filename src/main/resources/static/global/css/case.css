@@ -98,3 +98,7 @@ p {
 a.exchangeName {
   color: orange;
 }
+
+.card-header{
+  background-color: rgb(245, 234, 215);
+}

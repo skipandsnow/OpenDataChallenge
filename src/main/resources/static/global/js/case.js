@@ -1,4 +1,4 @@
-
+var viz;
 $('document').ready(function () {
     initDecisionTree();
     initCaseViz();
@@ -15,7 +15,7 @@ function initDecisionTree() {
 
 function initCaseViz() {
     var placeholderDiv = document.getElementById("caseViz");
-    var url = "https://public.tableau.com/views/ODC/sheet3?:embed=y&:display_count=yes&publish=yes&:origin=viz_share_link";
+    var url = "https://public.tableau.com/views/ODC/decision?:embed=y&:display_count=yes&publish=yes&:toolbar=no&:origin=viz_share_link";
     var options = {
         hideTabs: true,
         hideToolbar: true,
@@ -24,5 +24,5 @@ function initCaseViz() {
             activeSheet = workbook.getActiveSheet();
         }
     };
-    var viz = new tableau.Viz(placeholderDiv, url, options);
+    viz = new tableau.Viz(placeholderDiv, url, options);
 }

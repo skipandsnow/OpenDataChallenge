@@ -1,8 +1,12 @@
+var wordCloudViz;
+var powerViz;
 $('document').ready(function () {
-    renderPowerChart();
-    renderFivePowerChart();
+    // renderPowerChart();
     // renderWordCloud();
+    initPowerViz();
     initWordCloud();
+    renderFivePowerChart();
+
 });
 
 function renderPowerChart() {
@@ -76,7 +80,7 @@ function renderFivePowerChart() {
         },
 
         pane: {
-            size: '80%'
+            size: '100%'
         },
 
         xAxis: {
@@ -106,7 +110,7 @@ function renderFivePowerChart() {
         responsive: {
             rules: [{
                 condition: {
-                    maxWidth: 500
+                    // maxWidth: 500
                 },
                 chartOptions: {
                     legend: {
@@ -125,16 +129,30 @@ function renderFivePowerChart() {
 
 function initWordCloud() {
     var placeholderDiv = document.getElementById("wordCloudViz");
-    var url = "https://public.tableau.com/views/ODC/sheet4?:embed=y&:display_count=yes&:origin=viz_share_link";
+    var url = "https://public.tableau.com/views/ODC/wordcloud?:embed=y&:display_count=yes&publish=yes&:toolbar=no&:origin=viz_share_link";
     var options = {
         hideTabs: true,
         hideToolbar: true,
         onFirstInteractive: function () {
-            workbook = viz.getWorkbook();
+            workbook = wordCloudViz.getWorkbook();
             activeSheet = workbook.getActiveSheet();
         }
     };
-    var viz = new tableau.Viz(placeholderDiv, url, options);
+    wordCloudViz = new tableau.Viz(placeholderDiv, url, options);
+}
+
+function initPowerViz() {
+    var placeholderDiv = document.getElementById("powerViz");
+    var url = "https://public.tableau.com/views/ODC/single?:embed=y&:display_count=yes&publish=yes&:origin=viz_share_link";
+    var options = {
+        hideTabs: true,
+        hideToolbar: true,
+        onFirstInteractive: function () {
+            workbook = powerViz.getWorkbook();
+            activeSheet = workbook.getActiveSheet();
+        }
+    };
+    powerViz = new tableau.Viz(placeholderDiv, url, options);
 }
 
 function renderWordCloud() {
